@@ -408,9 +408,12 @@ export default class Modalize<FlatListItem = any, SectionListItem = any>
   }
 
   private onHandleOverlay = ({ nativeEvent }: TapGestureHandlerStateChangeEvent): void => {
-    if (nativeEvent.oldState === State.ACTIVE && !this.willCloseModalize) {
+    if (!this.willCloseModalize) {
       this.close();
     }
+    // if (nativeEvent.oldState === State.ACTIVE && !this.willCloseModalize) {
+    //   this.close();
+    // }
   }
 
   private onBackPress = async (): Promise<boolean> => {
